@@ -1,5 +1,22 @@
 <?php //this is common
 
+function usr_msg(){
+
+    if(isset($_SESSION['usermessage'])){
+        $msg = 'USER MESSAGE: '.$_SESSION['usermessage'];
+        $_SESSION['usermessage'] = "";
+        unset($_SESSION['usermessage']);
+        return $msg;
+
+
+    }
+    else{
+        return "";
+    }
+}
+
+
+
 
 //function to check if the user exusts
 function onlyuser($conn, $email) {
