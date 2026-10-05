@@ -3,16 +3,15 @@
 function usr_msg(){
 
     if(isset($_SESSION['usermessage'])){
-        $msg = 'USER MESSAGE: '.$_SESSION['usermessage'];
+        $msg = 'USER MESSAGE: ' . $_SESSION['usermessage'];
         $_SESSION['usermessage'] = "";
         unset($_SESSION['usermessage']);
-        return $msg;
-
 
     }
-    else{
-        return "";
-    }
+    // this is the correct way
+    return $msg;
+    //there should only be 1 return statement , return ""; bad programming
+
 }
 
 

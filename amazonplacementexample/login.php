@@ -1,7 +1,7 @@
 <?php
 //imports
-require_once "Resources/common.php";
-require_once "Resources/dbcon.php";
+require_once "resources/common.php";
+require_once "resources/dbcon.php";
 
 //start the session
 session_start();
@@ -64,7 +64,7 @@ else if (isset($_POST["email"])) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<?php require_once "Resources/navbarai.php";?>
+<?php require_once "resources/navbarai.php";?>
 
 
 

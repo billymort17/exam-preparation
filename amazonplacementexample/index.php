@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<?php require_once "Resources/navbarai.php";?>
+<?php require_once "resources/navbarai.php";?>
 
 <!-- div for the title -->
 <div class="title">

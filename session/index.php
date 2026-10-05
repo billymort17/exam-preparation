@@ -1,6 +1,10 @@
 <?php
     //this is the session start , it is giving us a session on the server if we are not already connected
     session_start();
+
+    require_once('common.php');
+
+
     //triple equals does not need to convert the values to compare unlike double equals. just checks if they are the same data type and the content is matching
     //checks if we have clicked the submit button
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

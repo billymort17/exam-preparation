@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<?php require_once "Resources/navbarai.php";?>
+<?php require_once "resources/navbarai.php";?>
 
 
 

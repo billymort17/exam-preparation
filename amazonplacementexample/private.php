@@ -20,7 +20,7 @@ exit;
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<?php require_once "Resources/navbarai.php";?>
+<?php require_once "resources/navbarai.php";?>
 
 
 
