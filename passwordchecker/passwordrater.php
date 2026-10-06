@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     else {
         $_session['usermessage'] = "your password is not long enough";
     }
+    if(str_contains($_SESSION['usermessage'], "ERROR")){
+        $msg = "<div id='error'> USER MESSAGE: ". $_SESSION['usermessage']."</div>";
+    } else {
+        $msg = "<div id='umsg'> USER MESSAGE: ". $_SESSION['usermessage']."</div>";
+    }
     //taking the message and assigning it the to session
     // $_SESSION['usermessage'] = $_POST['message'];
 
