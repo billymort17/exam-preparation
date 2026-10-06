@@ -27,21 +27,22 @@
 <!-- at every .php page there must be a session_start(); to use the global variable -->
 <html>
     <head>
-        <title> exam prep examples</title>
-        <link rel="stylesheet" href="styles.css">
+        <title>password process</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <form action="" method="post">
-            <!-- label will show the text that you put between the tags -->
-            <label for=""> random
-                <!-- allowing the user to input a unique set of text -->
-                <!-- the required forces an input from the user -->
-                <input type="text" name="password" required>
-            </label>
-            <button type="button" id="submit"> submit </button>
+        <nav>
+        <h1> safe and secure passwords </h1>
+        </nav>
+        <hr>
+        <p>  passwords are a method of authentication that makes the user enter in a set character amount in order to<br>
+        make sure that their account is safe from others. these characters normally have a set amount of rules to follow<br>
+        when creating a password as to make sure it is as secure as possible. this then creates a unique authentication<br>
+        that only the user who has made the password knows , locking the account to everyone until correct authentication<br>
+        , being the password, is given.</p>
 
-        </form>
+
     </body>
 
 </html>

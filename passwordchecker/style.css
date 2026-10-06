@@ -1,0 +1,18 @@
+body {
+    background-image: linear-gradient(to right, #c4850b , #645b05);
+}
+nav {
+    background-image: linear-gradient(to right, #1b8405 , #08620e);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+hr{
+    margin-top: 120px;
+}
+h1 {
+    text-align: center;
+}
+p {
+    text-align: center;
+}
