@@ -6,6 +6,19 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
+    float: left;
+}
+h2 {
+    text-align: center;
+}
+nav.navbar ul {
+    text-align: right;
+    list-style-type: none;
+}
+
+ul {
+    text-align: center;
+    padding-left: 0;
 }
 hr{
     margin-top: 120px;
@@ -15,4 +28,11 @@ h1 {
 }
 p {
     text-align: center;
+}
+form {
+    text-align: center;
+}
+input {
+    padding: 12px;
+    border: 5px;
 }
