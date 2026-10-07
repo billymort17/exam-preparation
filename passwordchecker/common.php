@@ -28,6 +28,7 @@ function string_length($mystring){ //check the length of a string
 //looking for uppercase characters and returning true or false
 function hasUppercase($string){
     if (preg_match("/[A-Z]/", $string)) {
+
         return true;
     } else {
         return false;
@@ -37,6 +38,7 @@ function hasUppercase($string){
 //looking for lowercase characters and returning true or false
 function hasLowercase($string){
     if (preg_match("/[a-z]/", $string)) {
+
         return true;
     } else {
         return false;
@@ -50,6 +52,24 @@ function hasDigit($string){
     } else {
         return false;
     }
+function firstcharacternospecialcharacter($string){
+    if (preg_match("/[a-zA-Z0-9_]/", $string[0])) {
+        return false;
+    } else {
+        return true;
+    }
+
+    }
+    function lastcharacternospecialcharacter($string){
+    if (preg_match("/[a-zA-Z0-9_]/", mb_substr($string, -1))) {
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+
 
 }
 //looking for special characters and returning true or false

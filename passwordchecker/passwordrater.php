@@ -9,22 +9,25 @@ require_once('common.php');
 //checks if we have clicked the submit button
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if(strlen($_POST['password'])) {
+    if (strlen($_POST['password'])) {
         //checking for the value true
         $_session['usermessage'] = "your password is long enough";
-    }
-    else {
+    } else {
         $_session['usermessage'] = "your password is not long enough";
     }
-    if(str_contains($_SESSION['usermessage'], "ERROR")){
-        $msg = "<div id='error'> USER MESSAGE: ". $_SESSION['usermessage']."</div>";
+    if (str_contains($_SESSION['usermessage'], "ERROR")) {
+        $msg = "<div id='error'> USER MESSAGE: " . $_SESSION['usermessage'] . "</div>";
     } else {
-        $msg = "<div id='umsg'> USER MESSAGE: ". $_SESSION['usermessage']."</div>";
+        $msg = "<div id='umsg'> USER MESSAGE: " . $_SESSION['usermessage'] . "</div>";
+    }
+}
+    $var1=$_POST['text1'];
+    $var2=$_POST['display'];
+    if(isset($var)) {
+        var_dump($var1);
     }
     //taking the message and assigning it the to session
     // $_SESSION['usermessage'] = $_POST['message'];
-
-}
 ?>
 <!doctype html>
 <!-- $_ super globals , accessible anywhere and reserved and secure. normally globals are bad but these are secure -->
@@ -60,14 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li> the first character cannot be a number </li>
         </ul>
         <br>
-        <form action="" method="post">
+        <form action='result.php' method="post">
             <!-- label will show the text that you put between the tags -->
             <label for="password"> password
                 <!-- allowing the user to input a unique set of text -->
                 <!-- the required forces an input from the user -->
-                <input type="text" name="password" required>
+                <input type="text" name="password" id="password" required> <br>
+                <button type="submit" id="display" name="display"> submit </button> <br>
             </label>
-            <button type="button" id="submit"> submit </button>
+
 
         </form>
     </body>
