@@ -21,7 +21,6 @@ if (isset($_POST["email"])) {
     <ul class="nav-list">
         <li><a href="login.php"> link to the login page </a></li>
         <li><a href="information.php"> link to an informations  page </a></li>
-        <li><a href="register"> link to the registering page </a></li>
     </ul>
 </nav>
 </body>

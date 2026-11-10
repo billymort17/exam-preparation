@@ -19,20 +19,6 @@ function usr_msg(){
 
 
 
-//function to add a console
-function addConsole($conn){
-    //prepare and execute the sql query
-    $sql = "INSERT INTO consoles (consolename, consoleprice , dateofmade ) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql); //prepare to sql
-
-    $stmt->bindParam(1, $_POST['conname']);
-    $stmt->bindParam(2, $_POST['conprice']);
-    $stmt->bindParam(3, $_POST['conmade']);
-
-    $stmt->execute(); //run the query to insert
-    $conn = null; //closes the connection so cant be abused
-    return true; //registration successfull
-}
 
 
 
@@ -52,22 +38,9 @@ function user_message() {
 }
 
 
-//function to add a school
-function addGame($conn){
-    //prepare and execute the sql query
-    $sql = "INSERT INTO game (gamename, creationdate, gameprice) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql); //prepare to sql
 
-    $stmt->bindParam(1, $_POST['gamename']);
-    $stmt->bindParam(2, $_POST['gamedate']);
-    $stmt->bindParam(3, $_POST['gameprice']);
 
-    $stmt->execute(); //run the query to insert
-    $conn = null; //closes the connection so cant be abused
-    return true; //registration successfull
-}
-
-//function to check if the user exusts
+//function to check if the user exists
 function onlyuser($conn, $email) {
     //make statement add params and execute it
     $sql = "SELECT useremail FROM user WHERE useremail = ?";
@@ -81,9 +54,9 @@ function onlyuser($conn, $email) {
     //return if the user is valid(not in use already)
     return !$result;
 }
-
+#function to register a user
 function reguser($conn) {
-    $sql = "INSERT INTO user(adminname, adminemail, adminpassword) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO user(name, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql); //prepare the sql
 
     //hash the pswd
@@ -124,15 +97,20 @@ function login($conn) {
     return false;
 }
 
-//function to add person to el database
+//function to add person to the database
 function register($conn){
     //prepare and execute the sql query
-    $sql = "INSERT INTO userinfo (FirstName, LastName, Email) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO userinfo (firstname, surname, gender , dateofbirth , email ,password , postcode) VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql); //prepare to sql
 
     $stmt->bindParam(1, $_POST['fname']);
-    $stmt->bindParam(2, $_POST['lname']);
+    $stmt->bindParam(2, $_POST['sname']);
+    $stmt->bindParam(1, $_POST['gender']);
+    $stmt->bindParam(2, $_POST['dateofbirth']);
     $stmt->bindParam(3, $_POST['email']);
+    $stmt->bindParam(3, $_POST['password']);
+    $stmt->bindParam(1, $_POST['postcode']);
+
 
     $stmt->execute(); //run the query to insert
     $conn = null; //closes the connection so cant be abused
