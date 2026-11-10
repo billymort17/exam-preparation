@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-    <title>console adder</title>
+    <title>Docts best care</title>
     <link rel="stylesheet" href="styles.css>
 </head>
 <body>

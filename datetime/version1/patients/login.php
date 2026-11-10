@@ -79,8 +79,10 @@ else if (isset($_POST["email"])) {
             <input name="surname" id="surname" placeholder="Enter surname..." type="text" required><br>
              <label for="gender">Name</label><br>
             <input name="gender" id="gender" placeholder="Enter gender..." type="text" required><br>
-            <label for="name">Name</label><br>
-            <input name="name" id="name" placeholder="Enter Name..." type="text" required><br>
+            <label for="dateofbirth">dateofbirth</label><br>
+            <input name="dateofbirth" id="dateofbirth" placeholder="Enter dateofbirth..." type="date" required><br>
+            <label for="postcode">postcode</label><br>
+            <input name="postcode" id="postcode" placeholder="Enter postcode..." type="text" required><br>
             <label for="email">Email</label><br>
             <input name="email" id="email" placeholder="Enter Email..." type="email" required><br>
             <label for="pswd">Password</label>

@@ -43,7 +43,7 @@ function user_message() {
 //function to check if the user exists
 function onlyuser($conn, $email) {
     //make statement add params and execute it
-    $sql = "SELECT useremail FROM user WHERE useremail = ?";
+    $sql = "SELECT email FROM patients WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt ->bindParam(1, $email);
     $stmt ->execute();
@@ -56,7 +56,7 @@ function onlyuser($conn, $email) {
 }
 #function to register a user
 function reguser($conn) {
-    $sql = "INSERT INTO user(name, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO patients(firstname, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql); //prepare the sql
 
     //hash the pswd
@@ -77,7 +77,7 @@ function reguser($conn) {
 //function to login to an account
 function login($conn) {
     //make the statement
-    $sql = "SELECT * FROM user WHERE useremail = ?";
+    $sql = "SELECT * FROM patients WHERE email = ?";
     $stmt = $conn->prepare($sql);
 
     //bind the params
@@ -100,7 +100,7 @@ function login($conn) {
 //function to add person to the database
 function register($conn){
     //prepare and execute the sql query
-    $sql = "INSERT INTO userinfo (firstname, surname, gender , dateofbirth , email ,password , postcode) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO patients (firstname, surname, gender , dateofbirth , email ,password , postcode) VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql); //prepare to sql
 
     $stmt->bindParam(1, $_POST['fname']);
