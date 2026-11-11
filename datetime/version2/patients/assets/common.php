@@ -136,6 +136,7 @@ function make_booking($conn){
     $stmt->bindParam(2, $_POST['bookedon']);
     $stmt->bindParam(3, $_POST['notes']);
     $stmt->bindParam(4, $_POST['staffid']);
-    $stmt->bindParam(5, $_SESSION('patientid'));
+    $stmt->bindParam(5, $_SESSION['patientid']);
 
+    $stmt->execute();
 }
