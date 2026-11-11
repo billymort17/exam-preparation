@@ -11,6 +11,7 @@ try{
         exit;
     } else {
         $_session['usermessage'] = "Booking has not been booked";
+        header("location: book.php");
         exit;
     }
 }
