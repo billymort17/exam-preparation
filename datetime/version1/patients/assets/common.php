@@ -60,10 +60,10 @@ function reguser($conn) {
     $stmt = $conn->prepare($sql); //prepare the sql
 
     //hash the pswd
-    $pswd = password_hash($_POST["pswd"], PASSWORD_DEFAULT);
+    $pswd = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     //add parameters
-    $stmt->bindParam(1, $_POST["name"]);
+    $stmt->bindParam(1, $_POST["firstname"]);
     $stmt->bindParam(2, $_POST["email"]);
     $stmt->bindParam(3, $pswd); //hash the password
 
@@ -89,7 +89,7 @@ function login($conn) {
     //set logged in default
     $loggedin = false;
     if ($result) {
-        $loggedin = password_verify($_POST["pswd"], $result[0]["pswd"]);
+        $loggedin = password_verify($_POST["password"], $result[0]["password"]);
     }
 
     //if logged in return user id
@@ -100,11 +100,11 @@ function login($conn) {
 //function to add person to the database
 function register($conn){
     //prepare and execute the sql query
-    $sql = "INSERT INTO patients (firstname, surname, gender , dateofbirth , email ,password , postcode) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO patients (firstname, surname, gender , dateofbirth , email , password , postcode) VALUES (?,?,?,?,?,?,?)";
     $stmt = $conn->prepare($sql); //prepare to sql
 
-    $stmt->bindParam(1, $_POST['fname']);
-    $stmt->bindParam(2, $_POST['sname']);
+    $stmt->bindParam(1, $_POST['firstname']);
+    $stmt->bindParam(2, $_POST['surname']);
     $stmt->bindParam(1, $_POST['gender']);
     $stmt->bindParam(2, $_POST['dateofbirth']);
     $stmt->bindParam(3, $_POST['email']);

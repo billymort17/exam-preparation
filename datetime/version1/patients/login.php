@@ -17,7 +17,7 @@ else if (isset($_SESSION["page"]) && $_SESSION["page"] == "login") {$loginPage=t
 //if signed up
 if (isset($_POST["name"])) {
     //check if pswd = pswd check
-    if ($_POST["pswd"] == $_POST["cpswd"]){
+    if ($_POST["password"] == $_POST["cpswd"]){
         //check the isn't taken
         if (onlyuser(dbconnect_insert(), $_POST["email"])) {
             //register
@@ -64,8 +64,8 @@ else if (isset($_POST["email"])) {
             <h1>Login</h1>
             <label for="email">Email</label><br>
             <input name="email" id="email" placeholder="Enter Email..." type="email" required><br>
-            <label for="pswd">Password</label>
-            <input name="pswd" id="pswd" placeholder="Enter password..." type="password" required><br>
+            <label for="password">Password</label>
+            <input name="password" id="password" placeholder="Enter password..." type="password" required><br>
             <button type="submit">Login</button><br>
             <a href="?page=register">Dont have an account? Register</a>
             ';}
@@ -77,16 +77,16 @@ else if (isset($_POST["email"])) {
             <input name="firstname" id="firstname" placeholder="Enter first name..." type="text" required><br>
              <label for="surname">surname</label><br>
             <input name="surname" id="surname" placeholder="Enter surname..." type="text" required><br>
-             <label for="gender">Name</label><br>
+             <label for="gender">gender</label><br>
             <input name="gender" id="gender" placeholder="Enter gender..." type="text" required><br>
-            <label for="dateofbirth">dateofbirth</label><br>
+            <label for="dateofbirth">date of birth</label><br>
             <input name="dateofbirth" id="dateofbirth" placeholder="Enter dateofbirth..." type="date" required><br>
             <label for="postcode">postcode</label><br>
             <input name="postcode" id="postcode" placeholder="Enter postcode..." type="text" required><br>
             <label for="email">Email</label><br>
             <input name="email" id="email" placeholder="Enter Email..." type="email" required><br>
-            <label for="pswd">Password</label>
-            <input name="pswd" id="pswd" placeholder="Enter password..." type="password" required><br>
+            <label for="password">Password</label>
+            <input name="password" id="password" placeholder="Enter password..." type="password" required><br>
             <label for="cpswd">Confirm Password</label>
             <input name="cpswd" id="cpswd" placeholder="Confirm password..." type="password" required><br>
             <button type="submit">Signup</button><br>

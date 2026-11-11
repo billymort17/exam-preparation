@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-    <title>Docts best care</title>
+    <title>Docs best care</title>
     <link rel="stylesheet" href="styles.css>
 </head>
 <body>
