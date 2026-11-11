@@ -105,11 +105,11 @@ function register($conn){
 
     $stmt->bindParam(1, $_POST['firstname']);
     $stmt->bindParam(2, $_POST['surname']);
-    $stmt->bindParam(1, $_POST['gender']);
-    $stmt->bindParam(2, $_POST['dateofbirth']);
-    $stmt->bindParam(3, $_POST['email']);
-    $stmt->bindParam(3, $_POST['password']);
-    $stmt->bindParam(1, $_POST['postcode']);
+    $stmt->bindParam(3, $_POST['gender']);
+    $stmt->bindParam(4, $_POST['dateofbirth']);
+    $stmt->bindParam(5, $_POST['email']);
+    $stmt->bindParam(6, $_POST['password']);
+    $stmt->bindParam(7, $_POST['postcode']);
 
 
     $stmt->execute(); //run the query to insert

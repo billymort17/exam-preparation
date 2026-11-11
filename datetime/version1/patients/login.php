@@ -52,7 +52,12 @@ else if (isset($_POST["email"])) {
 ?>
 
 
+<!doctype html>
 
+<head>
+    <title>Docs best care</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <!-- use title div class  -->
 <div class="formbackground">
     <!-- div for the form -->
