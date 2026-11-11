@@ -24,7 +24,7 @@ require_once "assets/dbconn.php";
 <br>
 <select name="staff">
     <?php
-        $pro = staff_getter();
+        $pro = staff_getter(dbconnect_insert());
         foreach ($pro as $staf){
             echo  "<option value =". $staf['staffid']. ">" . $staf['role'] . " " . $staf['firstname']." ".
                 $staf['surname']."- room ".$staf['room']."</option>";

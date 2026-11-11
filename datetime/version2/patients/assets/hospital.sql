@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 11, 2026 at 11:06 AM
+-- Generation Time: Nov 11, 2026 at 12:34 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.33
 
@@ -63,20 +63,21 @@ CREATE TABLE `staff` (
   `staffid` int NOT NULL,
   `firstname` text NOT NULL,
   `surname` text NOT NULL,
-  `role` text NOT NULL
+  `role` text NOT NULL,
+  `room` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`staffid`, `firstname`, `surname`, `role`) VALUES
-(1, 'owen', 'donkin', 'doctor'),
-(2, 'leo', 'truman', 'doctor'),
-(3, 'sonny', 'watkin', 'doctor'),
-(4, 'vicky', 'something', 'nurse'),
-(5, 'ellie', 'person', 'nurse'),
-(6, 'addison', 'donkin', 'nurse');
+INSERT INTO `staff` (`staffid`, `firstname`, `surname`, `role`, `room`) VALUES
+(1, 'owen', 'donkin', 'doctor', '01'),
+(2, 'leo', 'truman', 'doctor', '02'),
+(3, 'sonny', 'watkin', 'doctor', '03'),
+(4, 'vicky', 'something', 'nurse', '04'),
+(5, 'ellie', 'person', 'nurse', '05'),
+(6, 'addison', 'donkin', 'nurse', '06');
 
 --
 -- Indexes for dumped tables

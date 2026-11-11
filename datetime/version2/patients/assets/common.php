@@ -117,7 +117,7 @@ function register($conn){
     return true; //registration successful
 }
 
-function staff_getter(){
+function staff_getter($conn){
     $sql = "SELECT * FROM staff";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
