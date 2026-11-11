@@ -118,9 +118,9 @@ function register($conn){
 }
 
 function staff_getter(){
-    $sql = "SELECT * FROM staff 
+    $sql = "SELECT * FROM staff";
     $stmt = $conn->prepare($sql);
-    $stmt->execute():
+    $stmt->execute();
     $result = $stmt->fetchall(PDO::FETCH_ASSOC);
     $conn = null;
     return $result;

@@ -9,6 +9,8 @@
 <?php
 //import the stuff
 require_once('assets/navbar.php');
+require_once "assets/common.php";
+require_once "assets/dbconn.php";
 ?>
 <br>
 <hr>
