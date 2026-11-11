@@ -44,7 +44,7 @@ if (isset($_POST["name"])) {
 else if (isset($_POST["email"])) {
     $_SESSION["userid"] = login(dbconnect_insert());
     if ($_SESSION["userid"] != false) {
-        header("Location: private.php");
+        header("Location: index.php");
         exit;
     }
 }
