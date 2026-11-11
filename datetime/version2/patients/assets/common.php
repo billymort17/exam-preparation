@@ -124,6 +124,17 @@ function staff_getter($conn){
     $result = $stmt->fetchall(PDO::FETCH_ASSOC);
     $conn = null;
     return $result;
-  
+}
+//puts a capital t which invalidates our datetime format. this way formats it correctly and is industry standard
+function make_booking($conn){
+    $dt = new DateTime($_POST['appt-time']);
+    $mysql_datetime = $dt->format('Y-m-d H:i:s');
+
+    $sql = "INSERT INTO appointments (datetime,bookedon,notes) VALUES (?,?,?)";
+    $stmt = $conn->prepare($sql); //prepare to sql
+    $stmt->bindParam(2, $_POST['datetime']);
+    $stmt->bindParam(3, $_POST['bookedon']);
+    $stmt->bindParam(4, $_POST['notes']);
+
 
 }

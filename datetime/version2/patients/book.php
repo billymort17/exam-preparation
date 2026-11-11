@@ -1,6 +1,29 @@
 <?php
 require_once "assets/common.php";
 require_once "assets/dbconn.php";
+
+
+try{
+    if(make_booking(dbconnect_insert())){
+        $_session['usermessage'] = "Booking has been booked";
+        header("location: booking.php");
+        exit;
+    } else {
+        $_session['usermessage'] = "Booking has not been booked";
+        header("location: book.php");
+        exit;
+    }
+}
+catch(PDOException $e){
+    $_session['usermessage'] = "error" . $e->getMessage();
+    header("location: book.php");
+    exit;
+}
+catch(Exception $e){
+    $_session['usermessage'] = "error" . $e->getMessage();
+    header("location: book.php");
+    exit;
+}
 ?>
 
 
