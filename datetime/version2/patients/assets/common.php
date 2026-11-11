@@ -130,11 +130,12 @@ function make_booking($conn){
     $dt = new DateTime($_POST['appt-time']);
     $mysql_datetime = $dt->format('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO appointments (datetime,bookedon,notes) VALUES (?,?,?)";
+    $sql = "INSERT INTO appointments (datetime,bookedon,notes,staffid,patientid) VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql); //prepare to sql
     $stmt->bindParam(2, $_POST['datetime']);
     $stmt->bindParam(3, $_POST['bookedon']);
     $stmt->bindParam(4, $_POST['notes']);
-
+    $stmt->bindParam(5, $_POST['staffid']);
+    $stmt->bindParam(6, $_POST['patientid']);
 
 }
