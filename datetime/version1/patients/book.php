@@ -5,14 +5,16 @@ require_once "assets/dbconn.php";
 
 
 try{
-    if(make_booking(dbconnect_insert())){
-        $_session['usermessage'] = "Booking has been booked";
-        header("location: booking.php");
-        exit;
-    } else {
-        $_session['usermessage'] = "Booking has not been booked";
-        header("location: book.php");
-        exit;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(make_booking(dbconnect_insert())){
+            $_session['usermessage'] = "Booking has been booked";
+            header("location: booking.php");
+            exit;
+        } else {
+            $_session['usermessage'] = "Booking has not been booked";
+            header("location: book.php");
+            exit;
+        }
     }
 }
 catch(PDOException $e){
@@ -27,7 +29,7 @@ catch(Exception $e){
 }
 ?>
 
-
+<!doctype html>
 
 <html>
 <body>
@@ -46,15 +48,17 @@ catch(Exception $e){
     </div>
 </div>
 <br>
-<select name="staff">
-    <?php
-    $pro = staff_getter(dbconnect_insert());
-    foreach ($pro as $staf){
-        echo  "<option value =". $staf['staffid']. ">" . $staf['role'] . " " . $staf['firstname']." ".
-            $staf['surname']."- room ".$staf['room']."</option>";
-    }
-    ?>
-</select>
+<label>
+    <select name="staff">
+        <?php
+        $pro = staff_getter(dbconnect_insert());
+        foreach ($pro as $staff){
+            echo  "<option value =". $staff['staffid']. ">" . $staff['role'] . " " . $staff['firstname']." ".
+                $staff['surname']."- room ".$staff['room']."</option>";
+        }
+        ?>
+    </select>
+</label>
 
 </body>
 </html>

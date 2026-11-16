@@ -130,15 +130,18 @@ function make_booking($conn){
     $dt = new DateTime($_POST['appoint-time']);
     $mysql_datetime = $dt->format('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO appointments (datetime,bookedon,notes,staffid,patientid) VALUES (?,?,?,?,?)";
+    $notes = "";
+
+    $sql = "INSERT INTO appointments (datetime,notes,staffid,patientid) VALUES (?,?,?,?,?)";
     $stmt = $conn->prepare($sql); //prepare to sql
     $stmt->bindParam(1, $mysql_datetime);
-    $stmt->bindParam(2, $_POST['bookedon']);
-    $stmt->bindParam(3, $_POST['notes']);
+    $stmt->bindParam(3, $notes);
     $stmt->bindParam(4, $_POST['staffid']);
     $stmt->bindParam(5, $_SESSION['patientid']);
 
     $stmt->execute();
+    $conn = null;
+    return true;
 }
 
 function appoint_getter($conn){
@@ -150,4 +153,13 @@ function appoint_getter($conn){
     $result = $stmt->fetchall(PDO::FETCH_ASSOC);
     $conn = null;
     return $result;
+}
+
+function delete_booking($conn){
+    $sql = "DELETE FROM appointments WHERE appid=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $_POST['appid']);
+    $stmt->execute();
+    $conn = null;
+    return true;
 }
