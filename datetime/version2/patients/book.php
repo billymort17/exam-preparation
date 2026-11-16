@@ -6,22 +6,19 @@ require_once "assets/dbconn.php";
 try{
     if(make_booking(dbconnect_insert())){
         $_session['usermessage'] = "Booking has been booked";
-        header("location: booking.php");
+
         exit;
     } else {
         $_session['usermessage'] = "Booking has not been booked";
-        header("location: book.php");
         exit;
     }
-}
-catch(PDOException $e){
-    $_session['usermessage'] = "error" . $e->getMessage();
-    header("location: book.php");
+} catch (PDOException $e) {#catches PDOException errors and prevents them from causing any crashes
+    $_SESSION['usermessage'] = "ERROR: " . $e->getMessage();#sets the usermessage to the error message that was going to be outputted if there wasn't a try catch
+    header("Location: book.php");#sends user to registration to refresh the page
     exit;
-}
-catch(Exception $e){
-    $_session['usermessage'] = "error" . $e->getMessage();
-    header("location: book.php");
+} catch (Exception $e) {#catches errors
+    $_SESSION['usermessage'] = "ERROR: " . $e->getMessage();
+    header("Location: book.php");
     exit;
 }
 ?>
@@ -35,11 +32,11 @@ catch(Exception $e){
     <!-- div for the form -->
     <div class="form">
         <form action='' method='post'>
-            <label for="appt-time">Choose a time for your appointment:</label>
+            <label for="appoint-time">Choose a time for your appointment:</label>
             <input
                 type="datetime-local"
-                id="appt-time"
-             name="apt-time"
+                id="appoint-time"
+                name="apt-time"
             />
         </form>
     </div>
@@ -47,13 +44,14 @@ catch(Exception $e){
 <br>
 <select name="staff">
     <?php
-        $pro = staff_getter(dbconnect_insert());
-        foreach ($pro as $staf){
-            echo  "<option value =". $staf['staffid']. ">" . $staf['role'] . " " . $staf['firstname']." ".
-                $staf['surname']."- room ".$staf['room']."</option>";
+    $pro = staff_getter(dbconnect_insert());
+    foreach ($pro as $staf){
+        echo  "<option value =". $staf['staffid']. ">" . $staf['role'] . " " . $staf['firstname']." ".
+            $staf['surname']."- room ".$staf['room']."</option>";
     }
     ?>
 </select>
 
 </body>
 </html>
+

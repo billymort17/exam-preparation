@@ -127,7 +127,7 @@ function staff_getter($conn){
 }
 //puts a capital t which invalidates our datetime format. this way formats it correctly and is industry standard
 function make_booking($conn){
-    $dt = new DateTime($_POST['appt-time']);
+    $dt = new DateTime($_POST['appoint-time']);
     $mysql_datetime = $dt->format('Y-m-d H:i:s');
 
     $sql = "INSERT INTO appointments (datetime,bookedon,notes,staffid,patientid) VALUES (?,?,?,?,?)";
