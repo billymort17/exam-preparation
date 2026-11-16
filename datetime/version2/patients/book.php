@@ -35,11 +35,11 @@ catch(Exception $e){
     <!-- div for the form -->
     <div class="form">
         <form action='' method='post'>
-            <label for="appt-time">Choose a time for your appointment:</label>
+            <label for="appoint-time">Choose a time for your appointment:</label>
             <input
                 type="datetime-local"
-                id="appt-time"
-             name="apt-time"
+                id="appoint-time"
+             name="appoint-time"
             />
         </form>
     </div>
