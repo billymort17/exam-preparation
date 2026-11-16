@@ -42,8 +42,8 @@ if (isset($_POST["name"])) {
 
 //if logged in
 else if (isset($_POST["email"])) {
-    $_SESSION["userid"] = login(dbconnect_insert());
-    if ($_SESSION["userid"] != false) {
+    $_SESSION["patientid"] = login(dbconnect_insert());
+    if ($_SESSION["patientid"] != false) {
         header("Location: index.php");
         exit;
     }
