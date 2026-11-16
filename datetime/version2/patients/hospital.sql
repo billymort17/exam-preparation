@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 11, 2026 at 12:34 PM
+-- Generation Time: Nov 16, 2026 at 09:35 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.33
 
@@ -31,7 +31,7 @@ CREATE TABLE `appointments` (
   `appointmentid` int NOT NULL,
   `datetime` datetime NOT NULL,
   `bookedon` datetime NOT NULL,
-  `notes` text NOT NULL,
+  `notes` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `staffid` int NOT NULL,
   `patientid` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

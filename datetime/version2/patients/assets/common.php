@@ -142,7 +142,7 @@ function make_booking($conn){
 }
 
 function appoint_getter($conn){
-    $sql = "SELECT p.fname, p.sname, p.room, a.datetime, a.notes, a.bookedon FROM appointments AS a INNER JOIN professional AS p ON a.professionalid WHERE a.patientid=?";
+    $sql = "SELECT p.firstname, p.surname, p.room, a.datetime, a.notes, a.bookedon FROM appointments AS a INNER JOIN staff AS p ON a.staffid WHERE a.patientid=?";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(1, $_SESSION['patientid']);
 
