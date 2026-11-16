@@ -36,7 +36,7 @@ try{
             <input
                 type="datetime-local"
                 id="appoint-time"
-                name="apt-time"
+                name="appoint-time"
             />
         </form>
     </div>
